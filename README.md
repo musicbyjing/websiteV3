@@ -1,8 +1,8 @@
 # To-do:
 
 - [ ] RFI
-  - [ ] Add description
-  - [ ] Fix photo
+  - [x] Add description
+  - [x] Fix photo
   - [ ] Add pdf
 - [ ] Finish adding projects
 - [ ] Fix "Work projects" button
