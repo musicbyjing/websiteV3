@@ -35,7 +35,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       justify-content: flex-start;
       align-items: center;
     }
-    .emoji {
+    .hero_pic {
       margin-left: 0.75rem;
       width: 2.2rem;
       height: 2.2rem;
@@ -99,19 +99,25 @@ const Hero = ({ content }) => {
     }
     pageLoadSequence()
   }, [isIntroDone, eControls, gControls, sControls, uControls])
-  
+
   return (
     <StyledSection id="hero">
       {!isIntroDone && <SplashScreen />}
       <StyledContentWrapper>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={gControls}>
           <h1 className="title">
-            <div className="greetings">
+            {/* <div className="greetings">
               {frontmatter.greetings}
-              <motion.div animate={eControls} style={{ originX: 0.7, originY: 0.7 }}>
-                <Img className="emoji" fluid={frontmatter.icon.childImageSharp.fluid} />
+              <motion.div
+                animate={eControls}
+                style={{ originX: 0.7, originY: 0.7 }}
+              >
+                <Img
+                  className="hero_pic"
+                  fluid={frontmatter.image.childImageSharp.fluid}
+                />
               </motion.div>
-            </div>
+            </div> */}
             {frontmatter.title}
           </h1>
           <h2 className="subtitle">
@@ -120,13 +126,19 @@ const Hero = ({ content }) => {
             <AnimatedUnderlining animate={uControls} color="tertiary" big>
               {frontmatter.subtitle}
             </AnimatedUnderlining>
+            .
           </h2>
           <div className="description">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
-          <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
+          <Social
+            fontSize=".95rem"
+            padding=".3rem 1.25rem"
+            width="auto"
+            withIcon
+          />
         </motion.div>
       </StyledContentWrapper>
     </StyledSection>

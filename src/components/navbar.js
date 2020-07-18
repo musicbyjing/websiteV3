@@ -10,7 +10,7 @@ const StyledNav = styled.nav`
   display: none;
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 31.25rem;
     background: ${({ theme }) => theme.colors.background};
@@ -67,7 +67,6 @@ const Navbar = () => {
           </Link>
         )
       })}
-      <Link className="cta-btn" to={button.url}>{button.name}</Link>
     </StyledNav>
   )
 }

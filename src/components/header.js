@@ -22,7 +22,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 `
@@ -77,7 +77,6 @@ const Header = () => {
   const [open, setOpen] = useState(false)
   const [windowWidth, setWindowWidth] = useState(0)
 
-  
   useEffect(() => {
     let handleWindowSizeChange
     // if (isSSR) is necessary to prevent error during the gatsby build
@@ -94,9 +93,9 @@ const Header = () => {
   // Required for animation - start after the splashScreen sequence is done
   const controls = useAnimation()
   useEffect(() => {
-    if (isIntroDone) controls.start({ opacity: 1, y: 0, transition: { delay: 0.2 } })
+    if (isIntroDone)
+      controls.start({ opacity: 1, y: 0, transition: { delay: 0.2 } })
   }, [isIntroDone, controls])
-  
 
   let navigation
   if (detectMobileAndTablet(windowWidth)) {

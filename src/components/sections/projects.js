@@ -280,9 +280,7 @@ const Projects = ({ content }) => {
                   }
                 >
                   <div className="details">
-                    <div className="category">
-                      {frontmatter.emoji} {frontmatter.category}
-                    </div>
+                    <div className="category">{frontmatter.category}</div>
                     <div className="title">{frontmatter.title}</div>
                     <MDXRenderer>{body}</MDXRenderer>
                     <div className="tags">
@@ -336,19 +334,19 @@ const Projects = ({ content }) => {
       </StyledContentWrapper>
       {sectionDetails.frontmatter.buttonVisible === "true" && (
         <motion.a
-        ref={bRef}
-        variants={bVariants}
-        animate={bOnScreen ? "visible" : "hidden"}
-        className="cta-btn"
-        href={sectionDetails.frontmatter.buttonUrl}
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        aria-label="External Link"
-      >
-        <Button type="button" textAlign="center" color="primary" center>
-          {sectionDetails.frontmatter.buttonText}
-        </Button>
-      </motion.a>
+          ref={bRef}
+          variants={bVariants}
+          animate={bOnScreen ? "visible" : "hidden"}
+          className="cta-btn"
+          href={sectionDetails.frontmatter.buttonUrl}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          aria-label="External Link"
+        >
+          <Button type="button" textAlign="center" color="primary" center>
+            {sectionDetails.frontmatter.buttonText}
+          </Button>
+        </motion.a>
       )}
     </StyledSection>
   )
