@@ -8,6 +8,8 @@ import { motion } from "framer-motion"
 import { useOnScreen } from "../../hooks/"
 import ContentWrapper from "../../styles/ContentWrapper"
 
+import Social from "../social"
+
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
@@ -92,6 +94,14 @@ const About = ({ content }) => {
           <h3 className="section-title">{frontmatter.title}</h3>
           <div className="text-content">
             <MDXRenderer>{body}</MDXRenderer>
+          </div>
+          <div>
+            <Social
+              fontSize=".95rem"
+              padding=".3rem 1.25rem"
+              width="auto"
+              withIcon
+            />{" "}
           </div>
         </motion.div>
         <motion.div
