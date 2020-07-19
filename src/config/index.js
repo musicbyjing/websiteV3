@@ -48,7 +48,7 @@ module.exports = {
       url: "/privacy",
     },
     {
-      name: "© 2020 Jing Liu",
+      name: "© 2020 Jing Liu. Main photograph by Vivian Chu.",
       url: "/",
     },
   ],
