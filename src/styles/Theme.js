@@ -1,7 +1,7 @@
 module.exports = {
   colors: {
-    primary: "#131313", // for titles, headers
-    secondary: "#FFF4D9",
+    primary: "#283044", // for titles, headers, alternate 131313
+    secondary: "#F2DFD7", // alternate FFF4D9
     tertiary: "#F2F2F2",
     text: "#454545", // for text
     background: "#f8f8f8",
@@ -19,3 +19,5 @@ module.exports = {
   headerHeight: "6.25rem",
   footerHeight: "7.5rem",
 }
+
+// https://coolors.co/a16a7b-f2dfd7-fef9ff-283044-73a580

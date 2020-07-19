@@ -20,7 +20,7 @@ const StyledLogo = styled.div`
   user-select: auto !important;
 `
 
-const Logo = ({ size, color }) => (
+const Logo = ({ size, color, top }) => (
   <StyledLogo color={color} size={size}>
     {siteShortTitle}
   </StyledLogo>
