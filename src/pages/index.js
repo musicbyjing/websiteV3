@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 import Hero from "../components/sections/hero"
 import About from "../components/sections/about"
 import Projects from "../components/sections/projects"
-import Social from "../components/social"
 import { splashScreen } from "../config"
 
 const IndexPage = ({ data }) => (
