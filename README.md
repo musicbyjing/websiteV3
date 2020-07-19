@@ -3,6 +3,7 @@
 - [ ] Small bugs to fix:
   - [ ] LinkedIn button takes up the full width
   - [x] White line under hero??
+  - [x] Add image credit without messing up footer
 - [x] About
   - [x] Fix underlining/highlighting (nah)
 - [x] Add a photo?

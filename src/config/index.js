@@ -49,7 +49,6 @@ module.exports = {
     },
     {
       name: "© 2020 Jing Liu. Main photograph by Vivian Chu.",
-      url: "/",
     },
   ],
 }

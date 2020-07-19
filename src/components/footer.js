@@ -24,21 +24,20 @@ const StyledContentWrapper = styled(ContentWrapper)`
     align-items: center;
     .footer-links {
       /* Adjust width of links wrapper accordingly */
-      width: 10rem;
+      width: 15rem;
       display: flex;
       justify-content: space-between;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-        width: 15rem;
+        width: 35rem;
       }
     }
   }
 `
 
 const StyledLink = styled(Link)`
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #f8f8f8;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.background};
   letter-spacing: 1px;
 `
 
