@@ -30,19 +30,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-bottom: 4rem;
     }
-    .greetings {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
     .hero_pic {
       margin-left: 0.75rem;
-      width: 2.2rem;
-      height: 2.2rem;
+      width: 70%;
+      height: 70%;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         margin-left: 1rem;
-        width: 3rem;
-        height: 3rem;
+        width: 70%;
+        height: 70%;
       }
     }
     .title {
@@ -53,10 +48,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .subtitle {
       margin-top: -0.75rem;
-    }
-    .description {
-      font-size: 1.125rem;
-      margin-bottom: 2rem;
     }
   }
 `
@@ -103,44 +94,33 @@ const Hero = ({ content }) => {
   return (
     <StyledSection id="hero">
       {!isIntroDone && <SplashScreen />}
-      <StyledContentWrapper>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={gControls}>
-          <h1 className="title">
-            {/* <div className="greetings">
-              {frontmatter.greetings}
-              <motion.div
-                animate={eControls}
-                style={{ originX: 0.7, originY: 0.7 }}
-              >
-                <Img
-                  className="hero_pic"
-                  fluid={frontmatter.image.childImageSharp.fluid}
-                />
-              </motion.div>
-            </div> */}
-            {frontmatter.title}
-          </h1>
-          <h2 className="subtitle">
-            {frontmatter.subtitlePrefix}{" "}
-            {/* Hover state color can be set in useEffect hook */}
-            <AnimatedUnderlining animate={uControls} color="tertiary" big>
-              {frontmatter.subtitle}
-            </AnimatedUnderlining>
-            .
-          </h2>
-          <div className="description">
-            <MDXRenderer>{body}</MDXRenderer>
-          </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
-          <Social
-            fontSize=".95rem"
-            padding=".3rem 1.25rem"
-            width="auto"
-            withIcon
-          />
-        </motion.div>
-      </StyledContentWrapper>
+      <div>
+        <StyledContentWrapper>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={gControls}>
+            <Img
+              className="hero_pic"
+              fluid={frontmatter.image.childImageSharp.fluid}
+            />
+            <h1 className="title">{frontmatter.title}</h1>
+            <h2 className="subtitle">
+              {frontmatter.subtitlePrefix}{" "}
+              {/* Hover state color can be set in useEffect hook */}
+              <AnimatedUnderlining animate={uControls} color="tertiary" big>
+                {frontmatter.subtitle}
+              </AnimatedUnderlining>
+              .
+            </h2>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
+            <Social
+              fontSize=".95rem"
+              padding=".5rem 1.25rem"
+              width="auto"
+              withIcon
+            />
+          </motion.div>
+        </StyledContentWrapper>
+      </div>
     </StyledSection>
   )
 }

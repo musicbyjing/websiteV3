@@ -32,7 +32,7 @@ module.exports = {
   navLinks: {
     menu: [
       {
-        name: "About Me",
+        name: "About",
         url: "/#about",
       },
       {
@@ -48,8 +48,8 @@ module.exports = {
       url: "/privacy",
     },
     {
-      name: "Imprint",
-      url: "/imprint",
+      name: "© 2020 Jing Liu",
+      url: "/",
     },
   ],
 }

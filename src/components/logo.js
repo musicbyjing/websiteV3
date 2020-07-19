@@ -11,8 +11,8 @@ const StyledLogo = styled.div`
   z-index: 13;
 
   font-size: ${({ size }) => (size ? size : "1.75rem")};
-  font-weight: 900;
-  color: ${({ theme, color }) => theme.colors[color] || color };
+  font-weight: 800;
+  color: ${({ theme, color }) => theme.colors[color] || color};
 
   /* Disable effects when sidebar is open */
   filter: none !important;

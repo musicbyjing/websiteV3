@@ -14,8 +14,8 @@ const IndexPage = ({ data }) => (
   <Layout splashScreen={splashScreen}>
     <SEO title="Jing Liu | Student, Developer, Creator | musicbyjing.com." />
     <Hero content={data.hero.edges} />
-    <Projects content={data.projects.edges} />
     <About content={data.about.edges} />
+    <Projects content={data.projects.edges} />
   </Layout>
 )
 

@@ -32,29 +32,6 @@ const StyledSocialWrapper = styled.div`
     width: 2.5rem;
   }
 
-  /* Show scrollbar if desktop and wrapper width > viewport width */
-  @media (hover: hover) {
-    &::-webkit-scrollbar {
-      display: block;
-      -webkit-appearance: none;
-    }
-
-    &::-webkit-scrollbar:horizontal {
-      height: 0.8rem;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 8px;
-      border: 0.2rem solid white;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: #fff;
-      border-radius: 8px;
-    }
-  }
-
   a {
     margin-right: 0.5rem;
     margin-bottom: 0.75rem;

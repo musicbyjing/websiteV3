@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #f8f8f8;
   letter-spacing: 1px;
 `
 
@@ -50,7 +50,9 @@ const Footer = () => (
       </Link>
       <div className="footer-links">
         {footerLinks.map(({ name, url }, key) => (
-          <StyledLink key={key} to={url}>{name}</StyledLink>
+          <StyledLink key={key} to={url}>
+            {name}
+          </StyledLink>
         ))}
       </div>
     </StyledContentWrapper>
