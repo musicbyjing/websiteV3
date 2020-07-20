@@ -2,6 +2,8 @@
 
 - [ ] Small bugs to fix:
   - [ ] LinkedIn button takes up the full width
+  - [ ] Hero pic is blurry on firefox (480 by something)
+  - [ ] Scrollbar still appears on firefox
   - [x] White line under hero??
   - [x] Add image credit without messing up footer
 - [x] About
