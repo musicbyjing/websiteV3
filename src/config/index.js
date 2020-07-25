@@ -2,8 +2,7 @@ module.exports = {
   author: "Jing Liu",
   siteTitle: "Jing Liu | Student, Developer, Creator",
   siteShortTitle: "Jing Liu", // Used as logo text in header, footer, and splash screen
-  siteDescription:
-    "A modern one-page portfolio with a clean yet expressive design.",
+  siteDescription: "My portfolio site",
   siteUrl: "https://musicbyjing.com",
   siteLanguage: "en_US",
   siteIcon: "src/content/favicon.png", // Relative to gatsby-config file
