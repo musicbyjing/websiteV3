@@ -1,5 +1,11 @@
 # To-do:
 
+- [ ] Thumbnail doesn't show! Page source and inspect show different things!
+  - [ ] https://github.com/gatsbyjs/gatsby/issues/10017
+  - I think SEO is fine, just need to fix the inspect issue
+
+# Completed:
+
 - [ ] Small bugs to fix:
   - [ ] LinkedIn button takes up the full width
   - [x] Hero pic is blurry on firefox (480 by something)
