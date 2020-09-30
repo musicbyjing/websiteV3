@@ -1,102 +1,86 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Theme from "../styles/Theme"
+const SEO = ({ title, description, image, article }) => {
+  const { pathname } = useLocation()
+  const { site } = useStaticQuery(query)
 
-const { colors } = Theme
+  const {
+    defaultTitle,
+    titleTemplate,
+    defaultDescription,
+    siteUrl,
+    thumbnail,
+    twitterUsername,
+  } = site.siteMetadata
 
-const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            thumbnail
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${thumbnail}`,
+    url: `${siteUrl}${pathname}`,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:site_name`,
-          content: title,
-        },
-        {
-          property: `og:image`,
-          content: `thumbnail`,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `msapplication-TileColor`,
-          content: colors.primary,
-        },
-        {
-          name: `theme-color`,
-          content: colors.primary,
-        },
-      ].concat(meta)}
-    />
+    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+      <meta name="description" content={seo.description} />
+
+      {seo.url && <meta property="og:url" content={seo.url} />}
+
+      {(article ? true : null) && <meta property="og:type" content="article" />}
+
+      {seo.title && <meta property="og:title" content={seo.title} />}
+
+      {seo.description && (
+        <meta property="og:description" content={seo.description} />
+      )}
+
+      {seo.image && <meta property="og:image" content={seo.image} />}
+
+      <meta name="twitter:card" content="summary_large_image" />
+
+      {twitterUsername && (
+        <meta name="twitter:creator" content={twitterUsername} />
+      )}
+
+      {seo.title && <meta name="twitter:title" content={seo.title} />}
+
+      {seo.description && (
+        <meta name="twitter:description" content={seo.description} />
+      )}
+
+      {seo.image && <meta name="twitter:image" content={seo.image} />}
+    </Helmet>
   )
 }
+
+export default SEO
 
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  meta: PropTypes.array,
-  lang: PropTypes.string,
+  image: PropTypes.string,
+  article: PropTypes.bool,
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
+  title: null,
+  description: null,
+  image: null,
+  article: false,
 }
 
-export default SEO
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        defaultDescription: description
+        thumbnail: thumbnail
+      }
+    }
+  }
+`
