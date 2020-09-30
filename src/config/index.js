@@ -6,7 +6,7 @@ module.exports = {
   siteUrl: "https://musicbyjing.com",
   siteLanguage: "en_US",
   siteIcon: "src/content/favicon.png", // Relative to gatsby-config file
-
+  thumbnail: "static/thumbnail.png",
   splashScreen: false, // Set this to true if you want to use the splash screen
 
   // There are icons available for the following platforms:

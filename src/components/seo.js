@@ -16,6 +16,7 @@ const SEO = ({ description, lang, meta, title }) => {
             title
             description
             author
+            thumbnail
           }
         }
       }
@@ -43,6 +44,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           property: `og:site_name`,
           content: title,
+        },
+        {
+          propert: `og:image`,
+          content: `thumbnail`,
         },
         {
           property: `og:description`,
